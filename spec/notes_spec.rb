@@ -23,7 +23,7 @@ RSpec.describe Notes do
   describe "#select" do
     it "selects appropriate note" do
       subject.add("hello", "world")
-      expect(subject.select(1)).to eq ({:title=>"hello", :body=>"world"})
+      expect { subject.select(1) }.to output("hello\nworld\n").to_stdout
     end
     it "throws an error if out-of-range note called" do
       expect {subject.select(1) }.to raise_error "no such note exist"

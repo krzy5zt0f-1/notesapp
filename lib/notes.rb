@@ -15,6 +15,7 @@ class Notes
 
   def select(n)
     fail "no such note exist" if (n - 1) < 0 || n > @notes.size
-    @notes[n -1]
+    puts @notes[n - 1][:title]
+    puts @notes[n - 1][:body]
   end
 end
